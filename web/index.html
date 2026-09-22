@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Session · Surf Tracker</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="landing-mode">
+    <main class="landing-shell">
+      <section class="landing-intro">
+        <p class="workflow-badge">SURF TRACKER</p>
+        <h1>Start a new surf session</h1>
+        <p>Choose the original recording. It stays where it is on your Mac.</p>
+        <dl class="privacy-list">
+          <div><dt>Local</dt><dd>Video processing stays on this computer.</dd></div>
+          <div><dt>No copy</dt><dd>The app reads the original file in place.</dd></div>
+          <div><dt>Your choice</dt><dd>Calibrate first or scan with the current model.</dd></div>
+        </dl>
+      </section>
+
+      <section class="session-picker" aria-labelledby="pickerTitle">
+        <div id="dropZone" class="drop-zone">
+          <span class="drop-icon" aria-hidden="true">↓</span>
+          <h2 id="pickerTitle">Drop a surf video here</h2>
+          <p>MP4, MOV, M4V, AVI, or MKV</p>
+          <button id="chooseVideo" type="button">Choose video</button>
+        </div>
+
+        <div id="selectedVideo" class="selected-video" hidden>
+          <div>
+            <span class="file-kicker">SELECTED RECORDING</span>
+            <strong id="videoName"></strong>
+            <span id="videoDetails"></span>
+          </div>
+          <button id="changeVideo" type="button">Change</button>
+        </div>
+
+        <div id="nextStep" class="next-step" hidden>
+          <p>How should this session begin?</p>
+          <div class="session-options">
+            <button type="button" data-mode="calibrate">
+              <strong>Calibrate first</strong>
+              <span>Review the first 10 minutes, label examples, then fine-tune.</span>
+            </button>
+            <button type="button" data-mode="scan">
+              <strong>Use current model</strong>
+              <span>Go directly to full-session detection.</span>
+            </button>
+          </div>
+          <div id="scanProgress" class="scan-progress" hidden>
+            <div><strong id="scanStatus">Preparing detection…</strong><span id="scanPercent">0%</span></div>
+            <div class="scan-track"><span id="scanBar"></span></div>
+            <p id="scanDetail">The original file is being analyzed locally. You can leave this window open.</p>
+          </div>
+        </div>
+        <p id="browserNotice" class="browser-notice" hidden>Open Surf Tracker with <strong>run_app.command</strong> to select videos without copying them.</p>
+      </section>
+    </main>
+
+    <div id="status" role="status" aria-live="polite"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

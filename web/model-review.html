@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Final Edit · Surf Tracker</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="review-mode">
+    <header>
+      <div>
+        <p class="workflow-badge">FINAL EDIT</p>
+        <h1>Choose clips for your video</h1>
+      </div>
+      <div class="progress-copy"><strong id="reviewed">0</strong><span id="total"> candidates</span></div>
+    </header>
+    <div class="progress-track"><span id="progress"></span></div>
+    <main>
+      <section class="player-panel">
+        <div class="video-shell">
+          <video id="video" src="/model-video" controls playsinline></video>
+          <div class="time-badge" id="timeRange">00:00–00:00</div>
+        </div>
+        <div class="decision-row">
+          <button class="decision reject" id="reject" type="button" aria-keyshortcuts="1 X" title="Exclude from final video (1 or X)"><span>×</span> Exclude from final video</button>
+          <button class="decision accept" id="accept" type="button" aria-keyshortcuts="2 K" title="Keep in final video (2 or K)"><span>✓</span> Keep in final video</button>
+        </div>
+        <label class="note-field"><span>Editor note (optional)</span><textarea id="note" maxlength="500" rows="2"></textarea></label>
+        <nav class="clip-nav" aria-label="Detected clip navigation">
+          <button id="previous" type="button" aria-label="Previous detected clip" aria-keyshortcuts="ArrowLeft" title="Previous clip (Left arrow)">←</button>
+          <p>Detected clip <strong id="currentNumber">1</strong> of <span id="clipCount">0</span></p>
+          <button id="next" type="button" aria-label="Next detected clip" aria-keyshortcuts="ArrowRight" title="Next clip (Right arrow)">→</button>
+        </nav>
+      </section>
+      <aside>
+        <div class="filter-row"><button class="active" data-filter="all">All clips</button><button data-filter="unreviewed">Needs decision</button><button data-filter="rides">In final video</button></div>
+        <div class="export-action">
+          <strong id="exportHeading">Finish choosing clips</strong>
+          <span id="exportSummary">0 included · 0 excluded</span>
+          <button id="exportCompilation" type="button" disabled>Save final video to Mac</button>
+          <button id="stopExport" class="stop-export" type="button" hidden>Stop export</button>
+          <div id="exportProgress" class="youtube-progress" hidden>
+            <div><strong id="exportStage">Preparing export…</strong><span id="exportPercent">0%</span></div>
+            <div class="scan-track"><span id="exportBar"></span></div>
+            <p id="exportDetail"></p>
+          </div>
+          <a id="downloadCompilation" hidden download>Download final video</a>
+        </div>
+        <div class="publish-action">
+          <p class="destination-label">OR PUBLISH</p>
+          <strong>Publish unlisted to YouTube</strong>
+          <span>Only people with the link can watch.</span>
+          <div id="youtubeSetup">
+            <label class="credential-picker">
+              <span>Import Google Desktop OAuth JSON</span>
+              <input id="youtubeCredentials" type="file" accept="application/json,.json">
+            </label>
+          </div>
+          <button id="connectYoutube" class="secondary-publish" type="button" hidden>Connect YouTube account</button>
+          <div id="youtubeForm" hidden>
+            <label><span>Video title</span><input id="youtubeTitle" maxlength="100" required></label>
+            <label><span>Description (optional)</span><textarea id="youtubeDescription" maxlength="5000" rows="3"></textarea></label>
+            <button id="publishYoutube" type="button" disabled>Publish unlisted</button>
+          </div>
+          <div id="youtubeProgress" class="youtube-progress" hidden>
+            <div><strong id="youtubeStage">Preparing video…</strong><span id="youtubePercent">0%</span></div>
+            <div class="scan-track"><span id="youtubeBar"></span></div>
+            <p id="youtubeDetail"></p>
+          </div>
+          <a id="youtubeLink" class="youtube-link" hidden target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+        <ol id="clipList"></ol>
+      </aside>
+    </main>
+    <div id="status" role="status" aria-live="polite"></div>
+    <script src="/model-review.js"></script>
+  </body>
+</html>

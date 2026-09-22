@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Source Timeline · Surf Review</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">SURF TRACKER</p>
+        <h1>Source timeline</h1>
+      </div>
+      <div class="header-actions">
+        <a class="view-link" href="/label.html">Label frames →</a>
+        <a class="view-link" href="/">Candidate clips →</a>
+      </div>
+    </header>
+    <div class="progress-track"><span class="complete"></span></div>
+
+    <main class="source-layout">
+      <section class="player-panel">
+        <div class="video-shell">
+          <video id="sourceVideo" src="/source-video" controls playsinline></video>
+          <div class="time-badge" id="clock">00:00.0</div>
+        </div>
+
+        <div class="marker-row">
+          <button id="markStart" type="button"><span>Ⅰ</span> Mark start</button>
+          <div class="selection"><strong id="selectionStart">--:--.-</strong><span>to</span><strong id="selectionEnd">--:--.-</strong></div>
+          <button id="markEnd" type="button"><span>Ⅱ</span> Mark end</button>
+        </div>
+        <label class="note-field">
+          <span>Ride note</span>
+          <textarea id="rideNote" maxlength="500" rows="2" placeholder="Two surfers, wipeout, uncertain start…"></textarea>
+        </label>
+        <button class="save-ride" id="saveRide" type="button" disabled>+ Add ride interval</button>
+      </section>
+
+      <aside class="timeline-aside">
+        <div class="aside-heading">
+          <strong>Confirmed rides</strong>
+          <span id="rideCount">0</span>
+        </div>
+        <ol id="rideList"></ol>
+        <div class="dataset-action">
+          <button id="generateFrames" type="button">Generate training frames</button>
+          <output id="datasetCount"></output>
+        </div>
+      </aside>
+    </main>
+    <div id="status" role="status" aria-live="polite"></div>
+    <script src="/source.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Training Data · Surf Tracker</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="training-mode">
+    <header>
+      <div>
+        <p class="workflow-badge">TRAINING DATA</p>
+        <h1>Label standing surfers</h1>
+      </div>
+      <div class="header-actions">
+        <span class="label-progress"><strong id="reviewedCount">0</strong> / <span id="totalCount">0</span></span>
+        <a class="view-link" href="/source.html">Training setup →</a>
+      </div>
+    </header>
+    <div class="progress-track"><span id="labelProgress"></span></div>
+
+    <main class="label-layout">
+      <section class="label-workspace">
+        <div class="label-toolbar">
+          <button id="previousFrame" class="icon-button" type="button" title="Previous frame" aria-label="Previous frame">←</button>
+          <div class="frame-meta">
+            <strong id="framePosition">Frame 0 of 0</strong>
+            <span id="frameTimestamp">00:00.0</span>
+          </div>
+          <div class="zoom-control" aria-label="Image zoom">
+            <button type="button" data-zoom="0.75">75%</button>
+            <button class="active" type="button" data-zoom="1">100%</button>
+            <button type="button" data-zoom="1.5">150%</button>
+          </div>
+          <button id="nextFrame" class="icon-button" type="button" title="Save and next frame (Right Arrow)" aria-label="Save and next frame">→</button>
+        </div>
+
+        <div class="canvas-viewport" id="canvasViewport">
+          <canvas id="labelCanvas" aria-label="Training frame. Drag to draw a box around each standing surfer."></canvas>
+        </div>
+
+        <div class="annotation-actions">
+          <div class="box-summary"><strong id="boxCount">0 boxes</strong><span>Standing surfers only</span></div>
+          <button id="undoBox" class="secondary-action" type="button" disabled>↶ Undo box</button>
+          <button id="emptyFrame" class="secondary-action" type="button">No surfer to label</button>
+          <button id="saveAnnotation" class="primary-action" type="button">Save labels &amp; next</button>
+        </div>
+      </section>
+
+      <aside class="label-aside">
+        <div class="aside-heading">
+          <strong>Training frames</strong>
+          <span id="remainingCount">0</span>
+        </div>
+        <div class="label-key">
+          <span><i class="key-dot pending"></i> Needs label</span>
+          <span><i class="key-dot done"></i> Saved</span>
+        </div>
+        <ol id="frameList" class="frame-list"></ol>
+      </aside>
+    </main>
+    <div id="status" role="status" aria-live="polite"></div>
+    <script src="/label.js"></script>
+  </body>
+</html>

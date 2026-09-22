@@ -1,0 +1,8 @@
+numpy>=1.26,<3
+opencv-python>=4.9,<6
+pytest>=8,<9
+ultralytics==8.4.155
+google-auth>=2.30,<3
+google-auth-oauthlib>=1.2,<2
+google-api-python-client>=2.120,<3
+keyring>=25,<26

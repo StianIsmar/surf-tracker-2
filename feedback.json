@@ -1,0 +1,96 @@
+{
+  "source": "wholeclip.mp4",
+  "labels": [
+    {
+      "clip": 1,
+      "ride": true
+    },
+    {
+      "clip": 2,
+      "ride": true
+    },
+    {
+      "clip": 3,
+      "ride": false,
+      "note": "Surfer did not stand up."
+    },
+    {
+      "clip": 4,
+      "ride": false
+    },
+    {
+      "clip": 5,
+      "ride": true,
+      "note": "Ride begins about 10 seconds into the exported clip."
+    },
+    {
+      "clip": 6,
+      "ride": false
+    },
+    {
+      "clip": 7,
+      "ride": false
+    },
+    {
+      "clip": 8,
+      "ride": false
+    },
+    {
+      "clip": 9,
+      "ride": true
+    },
+    {
+      "clip": 10,
+      "ride": false
+    },
+    {
+      "clip": 11,
+      "ride": false
+    },
+    {
+      "clip": 12,
+      "ride": true,
+      "note": "Clip starts too late; two surfers are riding two waves."
+    },
+    {
+      "clip": 13,
+      "ride": true,
+      "note": "Surfer is already standing when the clip starts."
+    },
+    {
+      "clip": 14,
+      "ride": true,
+      "note": "Ride is over about 12 seconds into the clip."
+    },
+    {
+      "clip": 15,
+      "ride": false
+    },
+    {
+      "clip": 16,
+      "ride": false
+    },
+    {
+      "clip": 17,
+      "ride": false
+    },
+    {
+      "clip": 18,
+      "ride": true
+    },
+    {
+      "clip": 19,
+      "ride": false
+    },
+    {
+      "clip": 20,
+      "ride": false
+    },
+    {
+      "clip": 21,
+      "ride": false
+    }
+  ],
+  "missed_rides": null,
+  "missed_rides_note": "The source video was not reviewed end-to-end for missed rides."
+}
